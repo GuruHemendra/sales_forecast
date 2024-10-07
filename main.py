@@ -2,7 +2,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from sklearn.metrics import mean_squared_error
 from statsmodels.tsa.arima.model import ARIMA
 st.set_page_config(
@@ -36,11 +35,11 @@ st.markdown("""
             * We assumed a new Customer ID for all null values.
             """)
 
-transactions_01 = pd.read_csv('data/Transactional_data_retail_01.csv')
-transactions_02 = pd.read_csv('data/Transactional_data_retail_02.csv')
+transactions_01 = pd.read_csv('Transactional_data_retail_01.csv')
+transactions_02 = pd.read_csv('Transactional_data_retail_02.csv')
 
-customer_data = pd.read_csv('data/CustomerDemographics.csv')
-product_info = pd.read_csv('data/Productinfo.csv')
+customer_data = pd.read_csv('CustomerDemographics.csv')
+product_info = pd.read_csv('Productinfo.csv')
 customer_data.loc[customer_data.shape[0]]= {'Customer ID':'00000','Country':'Unknown'}
 values = customer_data.Country.value_counts().values.tolist()
 countries = customer_data.Country.value_counts().keys().tolist()
