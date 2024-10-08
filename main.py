@@ -39,7 +39,7 @@ transactions_01 = pd.read_csv('Transactional_data_retail_01.csv')
 transactions_02 = pd.read_csv('Transactional_data_retail_02.csv')
 
 customer_data = pd.read_csv('CustomerDemographics.csv')
-product_info = pd.read_csv('Productinfo.csv')
+product_info = pd.read_csv('ProductInfo.csv')
 customer_data.loc[customer_data.shape[0]]= {'Customer ID':'00000','Country':'Unknown'}
 values = customer_data.Country.value_counts().values.tolist()
 countries = customer_data.Country.value_counts().keys().tolist()
